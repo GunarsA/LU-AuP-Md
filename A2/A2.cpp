@@ -13,9 +13,9 @@ using std::cout;
 using std::endl;
 
 // Funkcija ir optimizēta lai strādātu kvadrātsakniskā laikā, jo katram
-// skaitļa reizinātājam (izņemot gadījumu kad tas ir kvadrātsakne) 
+// skaitļa reizinātājam (izņemot gadījumu kad tas ir kvadrātsakne)
 // ir vielviens reizinātajs, ar kuru sareizinot iegūst pašu skaitli.
-// Tāpēc for ciklam jāstrādā tikai lidz skaitļa kvadrātsaknei un 
+// Tāpēc for ciklam jāstrādā tikai lidz skaitļa kvadrātsaknei un
 // katrs atrsastais reizinātājs jāsakaita kā divi.
 
 int reizinatajuSkaits(int &x)

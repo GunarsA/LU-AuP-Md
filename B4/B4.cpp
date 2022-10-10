@@ -1,5 +1,5 @@
 // B4. Noskaidrot, vai dotajā naturālajā skaitlī ir atrodami vienādi
-// cipari. Ja ir, izdrukāt tos un skaitu, cik reižu dotais cipars 
+// cipari. Ja ir, izdrukāt tos un skaitu, cik reižu dotais cipars
 // ir sastopams. Skaitļa dalīšana ciparos jāveic skaitliski.
 
 // Gunārs Ābeltiņš
