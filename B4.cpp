@@ -1,3 +1,11 @@
+// B4. Noskaidrot, vai dotajā naturālajā skaitlī ir atrodami vienādi
+// cipari. Ja ir, izdrukāt tos un skaitu, cik reižu dotais cipars 
+// ir sastopams. Skaitļa dalīšana ciparos jāveic skaitliski.
+
+// Gunārs Ābeltiņš
+// ga22008
+// 2022.10.10
+
 #include <iostream>
 
 using std::cin;
@@ -9,7 +17,7 @@ void izvaditVienadosCiparus(int x)
     int ciparuSkaits[10]{};
     while (x > 0)
     {
-        ciparuSkaits[(x % 10) - 1]++;
+        ciparuSkaits[x % 10]++;
         x /= 10;
     }
 
@@ -19,7 +27,7 @@ void izvaditVienadosCiparus(int x)
         if (ciparuSkaits[i] > 1)
         {
             atkartojas = 1;
-            cout << "Cipars " << i + 1 << " atkartojas " << ciparuSkaits[i] << " reizes." << endl;
+            cout << "Cipars " << i << " atkartojas " << ciparuSkaits[i] << " reizes." << endl;
         }
     }
     if (!atkartojas)
@@ -48,3 +56,13 @@ int main()
 
     return 0;
 }
+
+//  Ievads | Izvads
+// --------|----------------------------------------------------------------------
+//  413413 | Cipars 1 atkartojas 2 reizes.
+//         | Cipars 3 atkartojas 2 reizes.
+//         | Cipars 4 atkartojas 2 reizes.
+// --------|----------------------------------------------------------------------
+// 1000000 | Cipars 0 atkartojas 6 reizes.
+// --------|----------------------------------------------------------------------
+//     -10 | Ievadi natur─ülu skaitli, kuram tiks noteikts vai cipari atk─ürtojas:
