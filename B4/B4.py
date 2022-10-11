@@ -6,13 +6,14 @@
 # ga22008
 # 2022.10.11
 
+
 def izvaditVienadosCiparus(x):
     ciparuSkaits = [0] * 10
     while x > 0:
         # Visus ciparus var iegūt paņemot atlikumu dalot ar 10, jo ievads
         # tiek dots decimālajā skaitīšanas sistēmā.
         ciparuSkaits[int(x % 10)] += 1
-        # Vajag dalit bez komata
+        # Vajag dalit, kā veselu skaitli
         x //= 10
 
     atkartojas = False
@@ -39,6 +40,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 #  Ievads | Izvads
 # --------|----------------------------------------------------------------------
