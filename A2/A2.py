@@ -25,11 +25,11 @@ def main():
     while ok:
         m = -1
         while(m < 1):
-            m = int(input("Ievadi naturalu skaitli: "))
+            m = int(input("Ievadi 1. naturālo skaitli: "))
 
         n = -1
         while(n < 1):
-            n = int(input("Ievadi vel:"))
+            n = int(input("Ievadi 2. naturālo skaitli:"))
         
         print(reizinatajuSkaits(m) - reizinatajuSkaits(n))
 
