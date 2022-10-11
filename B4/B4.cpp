@@ -17,6 +17,8 @@ void izvaditVienadosCiparus(int x)
     int ciparuSkaits[10]{};
     while (x > 0)
     {
+        // Visus ciparus var iegūt paņemot atlikumu dalot ar 10, jo ievads
+        // tiek dots decimālajā skaitīšanas sistēmā.
         ciparuSkaits[x % 10]++;
         x /= 10;
     }
@@ -30,6 +32,8 @@ void izvaditVienadosCiparus(int x)
             cout << "Cipars " << i << " atkartojas " << ciparuSkaits[i] << " reizes." << endl;
         }
     }
+    
+    // Ir iespējams ka neviens cipars neatkārtojas.
     if (!atkartojas)
     {
         cout << "Neviens cipars neatkārtojas." << endl;
@@ -47,7 +51,7 @@ int main()
         {
             cout << "Ievadi naturālu skaitli, kuram tiks noteikts vai cipari atkārtojas: ";
             cin >> x;
-        } while (!(x > 0));
+        } while (x < 1);
 
         izvaditVienadosCiparus(x);
         cout << "Atkārtot? (1 | 0): ";
@@ -65,4 +69,6 @@ int main()
 // --------|----------------------------------------------------------------------
 // 1000000 | Cipars 0 atkartojas 6 reizes.
 // --------|----------------------------------------------------------------------
-//     -10 | Ievadi natur─ülu skaitli, kuram tiks noteikts vai cipari atk─ürtojas:
+//     123 | Neviens cipars neatkārtojas.
+// --------|----------------------------------------------------------------------
+//     -10 | Ievadi naturālu skaitli, kuram tiks noteikts vai cipari atkārtojas:

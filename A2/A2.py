@@ -8,6 +8,7 @@
 
 def reizinatajuSkaits(x):
     rezultats = 0
+    
     # Ciklu sāk no viens, jo nulle nevar būt reizinātājs.
     i = 1
     # Ciklu veic līdz kvadrātsaknei no x, lai optimizētu koda ātrumu.
