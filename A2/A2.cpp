@@ -12,20 +12,19 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-// Funkcija ir optimizēta lai strādātu kvadrātsakniskā laikā, jo katram
-// skaitļa reizinātājam (izņemot gadījumu kad tas ir kvadrātsakne)
-// ir vielviens reizinātajs, ar kuru sareizinot iegūst pašu skaitli.
-// Tāpēc for ciklam jāstrādā tikai lidz skaitļa kvadrātsaknei un
-// katrs atrsastais reizinātājs jāsakaita kā divi.
-
 int reizinatajuSkaits(int &x)
 {
     int rezultats = 0;
 
+    // Ciklu sāk no viens, jo nulle nevar būt reizinātājs.
+    // Ciklu veic līdz kvadrātsaknei no x, lai optimizētu koda ātrumu.
     for (int i = 1; i * i <= x; ++i)
     {
+        // Katru reizinātāju pieskaita kā divus.
         if (x % i == 0)
         {
+            // Ja reizinātājs sakrīt ar skaitļa kvadrātsakni, to pieskaita, kā
+            // vienu, jo tas atkārtojas tikai vienreiz.
             rezultats += (i * i == x ? 1 : 2);
         }
     }
@@ -39,15 +38,18 @@ int main()
     {
         int m, n;
         cout << "Ievadi divus naturālus skaitļus!" << endl;
-        cout << "Pirmais skaitlis - ";
-        cin >> m;
 
-        while (m <= 0)
+        do
         {
+            cout << "Pirmais skaitlis: ";
             cin >> m;
-        }
+        } while (m <= 0);
 
-        cin >> n;
+        do
+        {
+            cout << "Otrais skaitlis: ";
+            cin >> n;
+        } while (n <= 0);
 
         cout << "Dažādo reizinātāju starpība - " << reizinatajuSkaits(m) - reizinatajuSkaits(n) << endl;
 
@@ -60,9 +62,11 @@ int main()
 
 //  Ievads | Izvads
 //  -------|--------
-//     9 8 | -1
+//     9 8 | 1
 //  -------|--------
 //   10 10 | 0
 //  -------|--------
 //   11 10 | -2
+//  -------|--------
+//   -1 -1 | Pirmais skaitlis: 
 //  -------|--------
