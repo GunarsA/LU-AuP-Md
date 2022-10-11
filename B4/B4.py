@@ -4,7 +4,7 @@
 
 # Gunārs Ābeltiņš
 # ga22008
-# 2022.10.10
+# 2022.10.11
 
 def izvaditVienadosCiparus(x):
     ciparuSkaits = [0] * 10

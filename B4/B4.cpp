@@ -4,7 +4,7 @@
 
 // Gunārs Ābeltiņš
 // ga22008
-// 2022.10.10
+// 2022.10.11
 
 #include <iostream>
 
@@ -32,7 +32,7 @@ void izvaditVienadosCiparus(int x)
             cout << "Cipars " << i << " atkartojas " << ciparuSkaits[i] << " reizes." << endl;
         }
     }
-    
+
     // Ir iespējams ka neviens cipars neatkārtojas.
     if (!atkartojas)
     {

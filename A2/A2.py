@@ -4,37 +4,40 @@
 
 # Gunārs Ābeltiņš
 # ga22008
-# 2022.10.10
+# 2022.10.11
 
 def reizinatajuSkaits(x):
     rezultats = 0
-    
+
     # Ciklu sāk no viens, jo nulle nevar būt reizinātājs.
     i = 1
     # Ciklu veic līdz kvadrātsaknei no x, lai optimizētu koda ātrumu.
     while i * i <= x:
-        # Ja reizinātājs sakrīt ar skaitļa kvadrātsakni, to pieskaita, kā
-        # vienu, jo tas atkārtojas tikai vienreiz.
+        # Katru reizinātāju pieskaita kā divus.
         if x % i == 0:
+            # Ja reizinātājs sakrīt ar skaitļa kvadrātsakni, to pieskaita, kā
+            # vienu, jo tas atkārtojas tikai vienreiz.
             rezultats += 1 if i * i == x else 2
         i += 1
 
     return rezultats
 
+
 def main():
     ok = 1
     while ok:
         m = -1
-        while(m < 1):
+        while (m < 1):
             m = int(input("Ievadi 1. naturālo skaitli: "))
 
         n = -1
-        while(n < 1):
-            n = int(input("Ievadi 2. naturālo skaitli:"))
-        
-        print(reizinatajuSkaits(m) - reizinatajuSkaits(n))
+        while (n < 1):
+            n = int(input("Ievadi 2. naturālo skaitli: "))
+
+        print(f"Dažādo reizinātāju starpība - {reizinatajuSkaits(m) - reizinatajuSkaits(n)}")
 
         ok = int(input("Atkartot? (1 | 0): "))
+
 
 if __name__ == "__main__":
     main()
@@ -47,5 +50,5 @@ if __name__ == "__main__":
 # -------|--------
 #  11 10 | -2
 # -------|--------
-#  -1 -1 | Pirmais skaitlis: 
+#  -1 -1 | Pirmais skaitlis:
 # -------|--------
