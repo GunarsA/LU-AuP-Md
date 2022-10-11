@@ -17,8 +17,8 @@ int reizinatajuSkaits(int &x)
 {
     int rezultats = 0;
 
-    // Ciklu sāk no viens, jo nulle nevar būt reizinātājs.
-    // Ciklu veic līdz kvadrātsaknei no x, lai optimizētu koda ātrumu.
+    // Ciklu veic līdz kvadrātsaknei no x, jo katru reizinataju, kas mazaks par kvadratsakni
+    // var ieskaitit divreiz.
     for (int i = 1; i * i <= x; ++i)
     {
         // Katru reizinātāju pieskaita kā divus.
@@ -42,13 +42,13 @@ int main()
 
         do
         {
-            cout << "Pirmais skaitlis: ";
+            cout << "Pirmais naturālais skaitlis: ";
             cin >> m;
         } while (m <= 0);
 
         do
         {
-            cout << "Otrais skaitlis: ";
+            cout << "Otrais naturālais skaitlis: ";
             cin >> n;
         } while (n <= 0);
 

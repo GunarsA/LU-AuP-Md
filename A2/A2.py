@@ -10,9 +10,9 @@
 def reizinatajuSkaits(x):
     rezultats = 0
 
-    # Ciklu sāk no viens, jo nulle nevar būt reizinātājs.
     i = 1
-    # Ciklu veic līdz kvadrātsaknei no x, lai optimizētu koda ātrumu.
+    # Ciklu veic līdz kvadrātsaknei no x, jo katru reizinataju, kas mazaks par kvadratsakni
+    # var ieskaitit divreiz.
     while i * i <= x:
         # Katru reizinātāju pieskaita kā divus.
         if x % i == 0:
