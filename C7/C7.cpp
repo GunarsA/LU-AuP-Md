@@ -1,4 +1,4 @@
-// C7. Dots masīvs A(m,n), kas sastāv no veseliem skaitļiem. Atrast četrus
+// C7. Dots masivsīvs A(m,n), kas sastāv no veseliem skaitļiem. Atrast četrus
 // skaitļus h,i,j,k, kas apzīmē apakšmatricu, kuras elementu kopsumma ir
 // vislielākā (h,i apzīmē apakšmatricas kreiso augšējo stūri,
 // bet j,k - labo apakšējo).
@@ -8,60 +8,62 @@
 // 2022.10.11
 
 #include <iostream>
-#define INF 0x3f3f3f3f
+#define BEZGALIBA 0x3f3f3f3f
 
 using std::cin, std::cout, std::endl, std::max;
 
-int kadanesAlgorithm(int *Arr, int &Len)
+int kadaneAlgoritms(int *Masivs, int &garums)
 {
-    int max_so_far = Arr[0];
-    int curr_max = Arr[0];
-    for (int i = 1; i < Len; ++i)
+    int rezultats = Masivs[0];
+    int tagadeja_summa = Masivs[0];
+    for (int i = 1; i < garums; ++i)
     {
-        curr_max = max(Arr[i], curr_max + Arr[i]);
-        max_so_far = max(max_so_far, curr_max);
+        tagadeja_summa = max(Masivs[i], tagadeja_summa + Masivs[i]);
+        rezultats = max(rezultats, tagadeja_summa);
     }
-    return max_so_far;
+    return rezultats;
 }
 
-int maxRectangleSum(int **Matrix, int &lenY, int &lenX)
+int iegutLielakoApaksmatricasSummu(int **Matriks, int &garums_y, int &garums_x)
 {
-    int res = -INF;
-    for (int top = 0; top < lenY; ++top)
+    int rezultats = -BEZGALIBA;
+
+    for (int augsa = 0; augsa < garums_y; ++augsa)
     {
-        int CurrRowSum[lenY]{};
-        for (int bottom = top; bottom < lenY; ++bottom)
+        int tagadeja_rindu_summa[garums_y]{};
+        for (int apaksa = augsa; apaksa < garums_y; ++apaksa)
         {
-            for (int i = 0; i < lenX; ++i)
+            for (int i = 0; i < garums_x; ++i)
             {
-                CurrRowSum[i] += Matrix[bottom][i];
+                tagadeja_rindu_summa[i] += Matriks[apaksa][i];
             }
-            res = max(res, kadanesAlgorithm(CurrRowSum, lenX));
+            rezultats = max(rezultats, kadaneAlgoritms(tagadeja_rindu_summa, garums_x));
         }
     }
-    return res;
+
+    return rezultats;
 }
 
 int main()
 {
-    int side_len;
-    cin >> side_len;
-    int **Matrix;
-    Matrix = new int *[side_len];
-    for (int i = 0; i < side_len; i++)
+    int malas_garums;
+    cin >> malas_garums;
+    int **Matriks;
+    Matriks = new int *[malas_garums];
+    for (int i = 0; i < malas_garums; i++)
     {
-        Matrix[i] = new int[10];
+        Matriks[i] = new int[10];
     }
 
-    for (int i = 0; i < side_len; ++i)
+    for (int i = 0; i < malas_garums; ++i)
     {
-        for (int j = 0; j < side_len; ++j)
+        for (int j = 0; j < malas_garums; ++j)
         {
-            cin >> Matrix[i][j];
+            cin >> Matriks[i][j];
         }
     }
 
-    cout << maxRectangleSum(Matrix, side_len, side_len);
+    cout << iegutLielakoApaksmatricasSummu(Matriks, malas_garums, malas_garums);
 
     return 0;
 }
