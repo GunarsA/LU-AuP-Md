@@ -1,4 +1,4 @@
-// C7. Dots masivsīvs A(m,n), kas sastāv no veseliem skaitļiem. Atrast četrus
+// C7. Dots masīvs A(m,n), kas sastāv no veseliem skaitļiem. Atrast četrus
 // skaitļus h,i,j,k, kas apzīmē apakšmatricu, kuras elementu kopsumma ir
 // vislielākā (h,i apzīmē apakšmatricas kreiso augšējo stūri,
 // bet j,k - labo apakšējo).
