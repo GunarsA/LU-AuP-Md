@@ -28,7 +28,7 @@ int kadaneAlgoritms(int *Masivs, int &garums)
     return rezultats;
 }
 
-int iegutLielakoApaksmatricasSummu(int **Matriks, int &garums_y, int &garums_x)
+int iegutLielakoApaksmatricasSummu(int **Matrica, int &garums_y, int &garums_x)
 {
     int rezultats = INT_MIN;
 
@@ -39,7 +39,7 @@ int iegutLielakoApaksmatricasSummu(int **Matriks, int &garums_y, int &garums_x)
         {
             for (int i = 0; i < garums_x; ++i)
             {
-                tagadeja_rindu_summa[i] += Matriks[apaksa][i];
+                tagadeja_rindu_summa[i] += Matrica[apaksa][i];
             }
             rezultats = max(rezultats, kadaneAlgoritms(tagadeja_rindu_summa, garums_x));
         }
@@ -52,22 +52,22 @@ int main()
 {
     int malas_garums;
     cin >> malas_garums;
-    int **Matriks;
-    Matriks = new int *[malas_garums];
+    int **Matrica;
+    Matrica = new int *[malas_garums];
     for (int i = 0; i < malas_garums; i++)
     {
-        Matriks[i] = new int[10];
+        Matrica[i] = new int[10];
     }
 
     for (int i = 0; i < malas_garums; ++i)
     {
         for (int j = 0; j < malas_garums; ++j)
         {
-            cin >> Matriks[i][j];
+            cin >> Matrica[i][j];
         }
     }
 
-    cout << iegutLielakoApaksmatricasSummu(Matriks, malas_garums, malas_garums);
+    cout << iegutLielakoApaksmatricasSummu(Matrica, malas_garums, malas_garums);
 
     return 0;
 }
