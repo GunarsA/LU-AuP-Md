@@ -9,7 +9,12 @@
 
 #include <iostream>
 
-using std::cin, std::cout, std::endl, std::max;
+using std::cin, std::cout, std::endl;
+
+int max(int a, int b)
+{
+    return (a > b ? a : b);
+}
 
 int kadaneAlgoritms(int *Masivs, int &garums)
 {
