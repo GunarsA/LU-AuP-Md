@@ -8,7 +8,6 @@
 // 2022.10.11
 
 #include <iostream>
-#define BEZGALIBA 0x3f3f3f3f
 
 using std::cin, std::cout, std::endl, std::max;
 
@@ -26,7 +25,7 @@ int kadaneAlgoritms(int *Masivs, int &garums)
 
 int iegutLielakoApaksmatricasSummu(int **Matriks, int &garums_y, int &garums_x)
 {
-    int rezultats = -BEZGALIBA;
+    int rezultats = -INT_MAX;
 
     for (int augsa = 0; augsa < garums_y; ++augsa)
     {
