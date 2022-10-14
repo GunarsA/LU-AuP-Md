@@ -25,7 +25,7 @@ int kadaneAlgoritms(int *Masivs, int &garums)
 
 int iegutLielakoApaksmatricasSummu(int **Matriks, int &garums_y, int &garums_x)
 {
-    int rezultats = -INT_MAX;
+    int rezultats = INT_MIN;
 
     for (int augsa = 0; augsa < garums_y; ++augsa)
     {
