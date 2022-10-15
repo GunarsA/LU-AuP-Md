@@ -11,27 +11,52 @@
 
 using std::cin, std::cout, std::endl;
 
+struct Apaksmatrica
+{
+    int augsa;
+    int laba_puse;
+    int apaksa;
+    int kreisa_puse;
+    int summa;
+
+    // Apaksmatrica(int augsa = 0, int laba_puse = 0, int apaksa = 0, int kreisa_puse = 0, int summa = 0)
+    // {
+    //     this->augsa = augsa;
+    //     this->laba_puse = laba_puse;
+    //     this->apaksa = apaksa;
+    //     this->kreisa_puse = kreisa_puse;
+    //     this->summa = summa;
+    // }
+};
+
 int max(int a, int b)
 {
     return (a > b ? a : b);
 }
 
-int kadaneAlgoritms(int *Masivs, int &garums)
+Apaksmatrica kadaneAlgoritms(int *Masivs, int &garums)
 {
-    int rezultats = Masivs[0];
+    Apaksmatrica rezultats;
+    rezultats.summa = Masivs[0];
+    rezultats.kreisa_puse = 0;
+    rezultats.laba_puse = 0;
+
     int tagadeja_summa = Masivs[0];
     for (int i = 1; i < garums; ++i)
     {
         tagadeja_summa = max(Masivs[i], tagadeja_summa + Masivs[i]);
-        rezultats = max(rezultats, tagadeja_summa);
+        if(tagadeja_summa > rezultats.summa){
+            
+        }
+        rezultats.summa = max(rezultats.summa, tagadeja_summa);
     }
     return rezultats;
 }
 
-int iegutLielakoApaksmatricasSummu(int **Matrica, int &garums_y, int &garums_x)
+Apaksmatrica iegutApaksmatricuArLielakoSummmu(int **Matrica, int &garums_y, int &garums_x)
 {
-    int rezultats = INT_MIN;
-
+    Apaksmatrica rezultats;
+    rezultats.summa = INT_MIN;
     for (int augsa = 0; augsa < garums_y; ++augsa)
     {
         int tagadeja_rindu_summa[garums_y]{};
@@ -41,7 +66,15 @@ int iegutLielakoApaksmatricasSummu(int **Matrica, int &garums_y, int &garums_x)
             {
                 tagadeja_rindu_summa[i] += Matrica[apaksa][i];
             }
-            rezultats = max(rezultats, kadaneAlgoritms(tagadeja_rindu_summa, garums_x));
+
+            Apaksmatrica pagaidu_mainigais = kadaneAlgoritms(tagadeja_rindu_summa, garums_x);
+
+            if (pagaidu_mainigais.summa > rezultats.summa)
+            {
+                rezultats = pagaidu_mainigais;
+                rezultats.augsa = augsa;
+                rezultats.apaksa = apaksa;
+            }
         }
     }
 
@@ -67,7 +100,9 @@ int main()
         }
     }
 
-    cout << iegutLielakoApaksmatricasSummu(Matrica, malas_garums, malas_garums);
+    Apaksmatrica rezultats = iegutApaksmatricuArLielakoSummmu(Matrica, malas_garums, malas_garums);
+    cout << "[" << rezultats.augsa << "," << rezultats.kreisa_puse << "]["
+         << rezultats.apaksa << "," << rezultats.laba_puse << "] " << rezultats.summa << endl;
 
     return 0;
 }
