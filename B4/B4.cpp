@@ -15,7 +15,12 @@ using std::endl;
 
 void izvaditVienadosCiparus(int x)
 {
-    int ciparuSkaits[10]{};
+    int ciparuSkaits[10];
+
+    for(int i = 0; i < 10; i++){
+        ciparuSkaits[i] = 0;
+    }
+
     while (x > 0)
     {
         // Visus ciparus var iegūt paņemot atlikumu dalot ar 10, jo ievads
@@ -34,7 +39,6 @@ void izvaditVienadosCiparus(int x)
         }
     }
 
-    // Ir iespējams ka neviens cipars neatkārtojas.
     if (!atkartojas)
     {
         cout << "Neviens cipars neatkārtojas." << endl;
