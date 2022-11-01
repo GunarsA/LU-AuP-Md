@@ -13,7 +13,6 @@ def izvaditVienadosCiparus(x):
         # Visus ciparus var iegūt paņemot atlikumu dalot ar 10, jo ievads
         # tiek dots decimālajā skaitīšanas sistēmā.
         ciparuSkaits[int(x % 10)] += 1
-        # Vajag dalit, kā veselu skaitli
         x //= 10
 
     atkartojas = False
@@ -22,10 +21,8 @@ def izvaditVienadosCiparus(x):
             atkartojas = True
             print(f"Cipars {i} atkartojas {ciparuSkaits[i]} reizes.")
 
-    # Ir iespējams ka neviens cipars neatkārtojas.
     if not atkartojas:
         print("Neviens cipars neatkartojas.")
-
 
 def main():
     ok = 1
@@ -35,7 +32,7 @@ def main():
             x = int(
                 input("Ievadi naturālu skaitli, kuram tiks noteikts vai cipari atkārtojas: "))
         izvaditVienadosCiparus(x)
-        ok = int(input("Atkartot: "))
+        ok = int(input("Atkartot (1 | 0): "))
 
 
 if __name__ == "__main__":

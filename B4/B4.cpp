@@ -49,8 +49,6 @@ void izvaditVienadosCiparus(int x)
 
 int main()
 {
-    system("chcp 65001 > NUL");
-
     for (int ok = 1; ok;)
     {
         int x;
