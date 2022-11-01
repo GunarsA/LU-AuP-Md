@@ -7,6 +7,9 @@
 # 2022.10.11
 
 
+# izvaditVienadosCiparus(x)
+# Funkcija izvaditVienadosCiparus(x) -
+# izvada konsolē kuri skaitļa x cipari atkārtojas un cik reizes.
 def izvaditVienadosCiparus(x):
     ciparuSkaits = [0] * 10
     while x > 0:
@@ -23,6 +26,7 @@ def izvaditVienadosCiparus(x):
 
     if not atkartojas:
         print("Neviens cipars neatkartojas.")
+
 
 def main():
     ok = 1

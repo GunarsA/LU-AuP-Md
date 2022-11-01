@@ -6,18 +6,21 @@
 // ga22008
 // 2022.10.11
 
-
 #include <iostream>
 
 using std::cin;
 using std::cout;
 using std::endl;
 
+// void izvaditVienadosCiparus(int x)
+// Funkcija izvaditVienadosCiparus(x) -
+// izvada konsolē, kuri skaitļa x cipari atkārtojas un cik reizes.
 void izvaditVienadosCiparus(int x)
 {
     int ciparuSkaits[10];
 
-    for(int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++)
+    {
         ciparuSkaits[i] = 0;
     }
 
@@ -65,7 +68,6 @@ int main()
 
     return 0;
 }
-
 
 //  Ievads | Izvads
 // --------|----------------------------------------------------------------------
