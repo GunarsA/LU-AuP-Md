@@ -33,11 +33,7 @@ void outputPairsUnderN(int &n)
 {
     for (int i = 1; i * 2 <= n; i++)
     {
-        if (divisorSum(i) > n)
-        {
-            continue;
-        }
-        if (i == divisorSum(divisorSum(i)) && i <= divisorSum(i))
+        if (i == divisorSum(divisorSum(i)) && i >= divisorSum(i))
         {
             cout << i << " " << divisorSum(i) << endl;
         }
