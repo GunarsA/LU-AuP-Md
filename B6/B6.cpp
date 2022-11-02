@@ -36,7 +36,6 @@ bool exists(int number, int curr_number, int curr_sum)
 int main()
 {
     int start, end;
-
     cin >> start >> end;
 
     for (int i = start; i <= end; i++)
