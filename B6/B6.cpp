@@ -29,7 +29,8 @@ bool exists(int number, int curr_number = -1, int curr_sum = 0)
     }
 
     // If the current number ends with 1 or 0 there is no need to raise these
-    // digits because they will always stay the same.
+    // digits because they will always stay the same. So the next level of the
+    // recursion can be called already.
     if (curr_number % 10 == 1 || curr_number % 10 == 0)
     {
         return exists(number, curr_number / 10, curr_sum + (curr_number % 10));
