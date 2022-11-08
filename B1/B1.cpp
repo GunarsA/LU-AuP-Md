@@ -31,7 +31,7 @@ int divisorSum(int x)
 
 void outputPairsUnderN(int &n)
 {
-    for (int i = 1; i * 2 <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
         if (i == divisorSum(divisorSum(i)) && i >= divisorSum(i))
         {
