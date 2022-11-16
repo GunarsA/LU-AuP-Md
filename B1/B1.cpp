@@ -1,7 +1,7 @@
 // B1. Dots naturāls skaitis n. Atrast visus tādus naturālu skaitļu pārīšus a
 // un b, kuri nepārsniedz n, lai a būtu  vienāds ar visu b dalītāju summu
 // (izņemot b), un b būtu vienāds ar visu a dalītāju summu (izņemot a).
-// Risinājumā izmantot funkciju, kas atpazīst pirmskaitļus.
+// Risinājumā izmantot funkciju, kas atpazīst pirmskaitļus. 
 
 #include <iostream>
 
