@@ -3,7 +3,7 @@
 
 class Cqueue
 {
-public:
+private:
     char rinda[5];
     int garums;
     int pozicija;
@@ -14,13 +14,13 @@ public:
     // destruktors, kurš paziņo par objekta likvidēšanu un likvidēto elementu skaitu (ja likvidēšanas brīdī rinda nav tukša)
     ~Cqueue();
     // "Ielikt" - enqueue, kas pievieno rindai elementu, ja tā nav pilna
-    void Ielikt(char elements);
+    void enqueue(char elements);
     // "Izņemt" - dequeue, kas izņem no rindas elementu un atgriež tā vērtību
-    char Izņemt();
+    char dequeue();
     //  "CikElementu" - count, kas atgriež elementu skaitu rindā
-    int CikElementu();
+    int count();
     // "VaiTukša" - isEmpty, kas noskaidro, vai rinda ir tukša.
-    bool VaiTukša();
+    bool isEmpty();
 };
 
 #endif

@@ -18,7 +18,7 @@ Cqueue::~Cqueue()
         cout << "Likvidēto elementu skaits: " << garums << endl;
 }
 
-void Cqueue::Ielikt(char elements)
+void Cqueue::enqueue(char elements)
 {
     if (garums == 5)
     {
@@ -38,9 +38,9 @@ void Cqueue::Ielikt(char elements)
     return;
 }
 
-char Cqueue::Izņemt()
+char Cqueue::dequeue()
 {
-    if (garums == 0)
+    if (isEmpty())
     {
         cout << "Rinda ir tukša! Elements netika izņemts!" << endl;
         return 0;
@@ -51,12 +51,12 @@ char Cqueue::Izņemt()
     return rinda[((pozicija + 4) - garums) % 5];
 }
 
-int Cqueue::CikElementu()
+int Cqueue::count()
 {
     return garums;
 }
 
-bool Cqueue::VaiTukša()
+bool Cqueue::isEmpty()
 {
-    return (garums);
+    return !(bool)garums;
 }
