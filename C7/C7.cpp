@@ -167,3 +167,5 @@ int main()
 //       -3 0 | Ievadiet korektu malas garumu (Viena vai abas no malām nebija naturāli skaitļi)!:
 
 // streak
+// streak 2
+// streak 3
