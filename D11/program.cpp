@@ -18,10 +18,6 @@ Cqueue::~Cqueue()
 
 void Cqueue::Ielikt(char elements)
 {
-    for(int i = 0; i < 5; ++i){
-        cout << (int)rinda[i] << "|";
-    }
-    cout << endl;
     if (garums == 5)
     {
         cout << "Rinda ir pilna! Elements netika pievienots!" << endl;
@@ -29,11 +25,6 @@ void Cqueue::Ielikt(char elements)
     }
 
     rinda[pozicija] = elements;
-
-    for(int i = 0; i < 5; ++i){
-        cout << (int)rinda[i] << "|";
-    }
-    cout << endl;
 
     ++garums;
     ++pozicija;
