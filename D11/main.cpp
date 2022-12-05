@@ -10,8 +10,27 @@ int main()
     int ok = 1;
     do
     {
+        for (int i = 0; i < 5; ++i)
+        {
+            cout << (int)Burtu_rinda.rinda[i] << "|";
+        }
+        cout << endl;
+
         char darbība[3];
+
+        for (int i = 0; i < 5; ++i)
+        {
+            cout << (int)Burtu_rinda.rinda[i] << "|";
+        }
+        cout << endl;
+
         cin.get(darbība, 10);
+
+        for (int i = 0; i < 5; ++i)
+        {
+            cout << (int)Burtu_rinda.rinda[i] << "|";
+        }
+        cout << endl;
 
         switch (darbība[0])
         {
@@ -28,6 +47,12 @@ int main()
             ok = 0;
             break;
         }
+
+        for (int i = 0; i < 5; ++i)
+        {
+            cout << (int)Burtu_rinda.rinda[i] << "|";
+        }
+        cout << endl;
 
         cin.ignore();
     } while (ok);
