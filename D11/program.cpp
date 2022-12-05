@@ -13,7 +13,9 @@ Cqueue::Cqueue()
 
 Cqueue::~Cqueue()
 {
-    cout << "Rinda garumā " << garums << " tika likvidēta!" << endl;
+    cout << "Rinda tika likvidēta! " << endl;
+    if (garums)
+        cout << "Likvidēto elementu skaits: " << garums << endl;
 }
 
 void Cqueue::Ielikt(char elements)
