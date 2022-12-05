@@ -16,7 +16,7 @@ int main()
         }
         cout << endl;
 
-        char darbība[3];
+        char darbība[4];
 
         for (int i = 0; i < 5; ++i)
         {
