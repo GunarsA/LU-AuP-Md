@@ -26,6 +26,12 @@ void Cqueue::enqueue(char elements)
         return;
     }
 
+    if (!((elements >= 'a' && elements <= 'z') || (elements >= 'A' && elements <= 'Z')))
+    {
+        cout << "Elements nav burts! Elements netika pievienots!" << endl;
+        return;
+    }
+
     rinda[pozicija] = elements;
 
     ++garums;
@@ -46,9 +52,10 @@ char Cqueue::dequeue()
         return 0;
     }
 
-    --garums;
-
-    return rinda[((pozicija + 4) - garums) % 5];
+    // Pirmais rindā ievietotais elements tiks noskaidrots, pieskaitot nākamā
+    // elementa pozīcijai masīva izmēru un atņemot no tā šī brīža elementu
+    // skaitu.
+    return rinda[((pozicija + 5) - garums--) % 5];
 }
 
 int Cqueue::count()

@@ -9,17 +9,40 @@ private:
     int pozicija;
 
 public:
-    // konstruktors
+    // Cqueue();
+    // Funkcija Cqueue() -
+    // Konstruē Burtu virknes objektu.
     Cqueue();
-    // destruktors, kurš paziņo par objekta likvidēšanu un likvidēto elementu skaitu (ja likvidēšanas brīdī rinda nav tukša)
+
+    // ~Cqueue();
+    // Funkcija ~Cqueue().
+    // paziņo par objekta likvidēšanu un likvidēto elementu skaitu (ja
+    // likvidēšanas brīdī rinda nav tukša)
     ~Cqueue();
-    // "Ielikt" - enqueue, kas pievieno rindai elementu, ja tā nav pilna
+
+    // void enqueue(char elements);
+    // Funkcija enqueue(elements) -
+    // pievieno rindai elementu (elements), ja tā nav pilna. Pretējā gadijuma
+    // izvada paziņujumu, ka elements netika pievienots. Ja elements nav lielais
+    // vai mazais latīņu alfabēta burts bez diaktrijas zīmēm, tas netiek
+    // pievienots un tiek izvadīts paziņojums, ka elements netika pievienots.
     void enqueue(char elements);
-    // "Izņemt" - dequeue, kas izņem no rindas elementu un atgriež tā vērtību
+
+    // char dequeue();
+    // Funkcija dequeue() -
+    // izņem no rindas elementu un atgriež tā vērtību. Ja rinda ir tukša izvada
+    // paziņojumu, ka elements netika izņemts.
     char dequeue();
-    //  "CikElementu" - count, kas atgriež elementu skaitu rindā
+
+    // int count();
+    // Funkcija count() -
+    // atgriež elementu skaitu rindā.
     int count();
-    // "VaiTukša" - isEmpty, kas noskaidro, vai rinda ir tukša.
+
+    // bool isEmpty();
+    // Funkcija isEmpty() -
+    // noskaidro, vai rinda ir tukša un atgriež bool vertību, kas ir patiesa,
+    // ja rinda ir tukša.
     bool isEmpty();
 };
 
