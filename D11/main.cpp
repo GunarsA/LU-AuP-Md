@@ -1,12 +1,12 @@
-// D11. Izveidot klasi "Burtu rinda" - Cqueue (queue, pa vienu pusi ieliek, pa 
+// D11. Izveidot klasi "Burtu rinda" - Cqueue (queue, pa vienu pusi ieliek, pa
 // otru izņem!), kurā glabājas masīvs ar burtiem (char) garumā pieci un
 // rindas elementu skaits. Klasei izveidot šādas metodes: (1) konstruktors,
 // (2) destruktors, kurš paziņo par objekta likvidēšanu un likvidēto elementu
 // skaitu (ja likvidēšanas brīdī rinda nav tukša), (3) metode "Ielikt" - enqueue,
 // kas pievieno rindai elementu, ja tā nav pilna, (4) metode "Izņemt" - dequeue,
-// kas izņem no rindas elementu un atgriež tā vērtību, (5) metode 
-// "CikElementu" - count, kas atgriež elementu skaitu rindā, (6) metode 
-// "VaiTukša" - isEmpty, kas noskaidro, vai rinda ir tukša.  
+// kas izņem no rindas elementu un atgriež tā vērtību, (5) metode
+// "CikElementu" - count, kas atgriež elementu skaitu rindā, (6) metode
+// "VaiTukša" - isEmpty, kas noskaidro, vai rinda ir tukša.
 // Pirms uzdevuma veikšanas precīzi noskaidrot, ko nozīmē jēdziens rinda (queue).
 
 #include <iostream>
@@ -36,6 +36,7 @@ int main()
         cout << "Ievadiet darbību! : ";
         char darbiba[4];
         cin.get(darbiba, 10);
+        cin.ignore();
 
         switch (darbiba[0])
         {
@@ -60,7 +61,7 @@ int main()
             break;
         }
 
-        cin.ignore();
+        
     } while (ok);
 
     return 0;
