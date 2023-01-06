@@ -10,7 +10,7 @@ using namespace std;
 
 // list<string> shuntingYardAlgorithm(const string &equation);
 // Funkcija shuntingYardAlgorithm(equation) -
-// Paņem matemātisko izteiksmi (equation) augta lēmeņa simbolu virknes forma, un
+// Paņem matemātisko izteiksmi (equation) augta līmeņa simbolu virknes formā, un
 // atgriež to apgrieztajā poļu pierakstā, kā augsta līmeņa simbolu virkņu
 // sarakstu.
 list<string> shuntingYardAlgorithm(const string &equation);
@@ -18,7 +18,8 @@ list<string> shuntingYardAlgorithm(const string &equation);
 // double evaluateReversePolishNotation(const list<string> &equation);
 // Funkcija evaluateReversePolishNotation(equation) -
 // Paņem matematisko izteiksmi apgrieztā poļu pieraksta forma (equation),
-// kā augsta līmeņa simbolu virkņu sarakstu, un atgriež tas rezultātu.
+// kā augsta līmeņa simbolu virkņu sarakstu, un atgriež tas rezultātu, kā
+// double vertību
 double evaluateReversePolishNotation(const list<string> &equation);
 
 int main()
@@ -52,6 +53,7 @@ int main()
 list<string> shuntingYardAlgorithm(const string &equation)
 {
     map<char, int> op_precedence({{'+', 2}, {'-', 2}, {'*', 3}, {'/', 3}, {'^', 4}});
+    // 1 priekš kreisas asocivitātes, 2 priekš labās.
     map<char, bool> op_associativity({{'+', 1}, {'-', 1}, {'*', 1}, {'/', 1}, {'^', 0}});
 
     stack<char> op_stack;
@@ -60,7 +62,6 @@ list<string> shuntingYardAlgorithm(const string &equation)
 
     for (auto i = equation.begin(); i != equation.end(); ++i)
     {
-
         // Ja atrod ciparu, punktu vai mīnus zīmi, kas ir izteiksmes sākuma vai
         // tieši aiz atverošajām iekāvam saglabā to saraksta beigās.
         if (((i == equation.begin() || *(i - 1) == '(') && *i != '(') ||
@@ -110,7 +111,8 @@ list<string> shuntingYardAlgorithm(const string &equation)
         }
         // Operātori tiek ievietoti kaudzē, bet vispirms no tās tiek izņemti
         // tie kuriem, kuriem ir augstāka prioritāte vai vienāda prioritāte
-        // un kreisā associvitāte.
+        // un kreisā associvitāte, lai darbības tiktu pārveitotas uz pareizu
+        // secību
         else if (op_precedence.count(*i))
         {
             while (!op_stack.empty() && (op_precedence[*i] < op_precedence[op_stack.top()] ||
@@ -215,7 +217,7 @@ double evaluateReversePolishNotation(const list<string> &equation)
 //          3.5 + 4 * 2 | 3.5 4 2 * +
 //                      | 11.5
 // ---------------------|-----------------------------------------------------
-//                0 / 5 | 5 0 /
+//                5 / 0 | 5 0 /
 //                      | Dalīšana ar nulli!
 // ---------------------|-----------------------------------------------------
 //             (5 + 3)) | Iekavu neatbilstība!
